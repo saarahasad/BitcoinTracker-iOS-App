@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BitcoinTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="41D-cD-rhB">
+                                <rect key="frame" x="145" y="45" width="85" height="29"/>
+                                <segments>
+                                    <segment title="USD"/>
+                                    <segment title="INR"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RV-Bc-5NN">
+                                <rect key="frame" x="30" y="607" width="315" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Get Current Price">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="bttnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d4n-gT-2Mf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvi-gr-dqy">
+                                <rect key="frame" x="160" y="519.5" width="55" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38t-gI-Yzi" customClass="Chart" customModule="SwiftChart">
+                                <rect key="frame" x="0.0" y="123" width="375" height="296.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jvi-gr-dqy" firstAttribute="top" secondItem="38t-gI-Yzi" secondAttribute="bottom" constant="100" id="3QE-2u-pSG"/>
+                            <constraint firstItem="41D-cD-rhB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Fx-O7-MBw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6RV-Bc-5NN" secondAttribute="bottom" constant="30" id="DJu-MK-b5p"/>
+                            <constraint firstItem="38t-gI-Yzi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E5T-Ab-Fpm"/>
+                            <constraint firstItem="6RV-Bc-5NN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="EPi-Yh-N6e"/>
+                            <constraint firstItem="6RV-Bc-5NN" firstAttribute="top" secondItem="jvi-gr-dqy" secondAttribute="bottom" constant="60" id="T0c-vr-qff"/>
+                            <constraint firstItem="jvi-gr-dqy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yv0-Jk-e2c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6RV-Bc-5NN" secondAttribute="trailing" constant="30" id="cbb-Az-jCQ"/>
+                            <constraint firstItem="38t-gI-Yzi" firstAttribute="top" secondItem="41D-cD-rhB" secondAttribute="bottom" constant="50" id="eOM-ja-XO8"/>
+                            <constraint firstItem="6RV-Bc-5NN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jbh-zB-kjd"/>
+                            <constraint firstItem="41D-cD-rhB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="mAj-BD-KzG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="38t-gI-Yzi" secondAttribute="trailing" id="uPN-5H-iFc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="38t-gI-Yzi" id="ozE-tq-Gn8"/>
+                        <outlet property="label" destination="jvi-gr-dqy" id="OBc-nc-ucp"/>
+                        <outlet property="segmentedController" destination="41D-cD-rhB" id="bMb-T8-KVB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
